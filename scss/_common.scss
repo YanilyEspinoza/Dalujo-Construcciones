@@ -1,0 +1,22 @@
+//RESET
+*{
+    padding: 0rem;
+    margin: 0rem;
+}
+//GENERAL
+body{
+    min-height: 100vh;
+}
+.logoDalujoConstrucciones{
+    width: 20vw;
+}
+    //ASIDE
+.bgNaranja{
+	background-color: map-get($map: $colors, $key: 'naranja')
+}
+.bgNegro{
+    background-color: map-get($map: $colors, $key: 'negro')
+}
+.index_main_sistema{
+    width: 20vw;
+}

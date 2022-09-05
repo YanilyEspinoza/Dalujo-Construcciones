@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700&family=Oxygen:wght@300;400;700&display=swap');
+
+//vars fonts
+$font1: 'Alegreya Sans', sans-serif;
+$font2: 'Oxygen', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5{
+    font-family: $font1;
+}
+p{
+    font-family: $font2;
+    margin: 0px;
+}
+h1{
+    color: map-get($map: $colors, $key: 'naranja');
+}
+h1,
+h2{
+    text-align: center;
+}
+//sizes
+$textSm:0.8em;
+$textMd:1em;
+$textLg:1.6em;
+$textXl:3em;
+
+//weight
+$text_extraLight:300;
+$text_light:400;
+$text_bold:700;
+
+.textWhite{
+    color: map-get($map: $colors, $key: 'white');
+}
+.textGreen{
+    color: map-get($map: $colors, $key: 'green')
+}

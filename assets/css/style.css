@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700&family=Oxygen:wght@300;400;700&display=swap");
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Alegreya Sans", sans-serif; }
+
+p {
+  font-family: "Oxygen", sans-serif;
+  margin: 0px; }
+
+h1 {
+  color: #eb4d0f; }
+
+h1,
+h2 {
+  text-align: center; }
+
+.textWhite {
+  color: #d3e9d7; }
+
+.textGreen {
+  color: #4dff70; }
+
+* {
+  padding: 0rem;
+  margin: 0rem; }
+
+body {
+  min-height: 100vh; }
+
+.logoDalujoConstrucciones {
+  width: 20vw; }
+
+.bgNaranja {
+  background-color: #eb4d0f; }
+
+.bgNegro {
+  background-color: black; }
+
+.index_main_sistema {
+  width: 20vw; }
+
+.bg_Negro {
+  background-color: black;
+  color: #d3e9d7; }
+
+.footer_Img_Logo {
+  border-radius: 50%;
+  width: 20vh;
+  height: 20vh; }

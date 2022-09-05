@@ -10,7 +10,7 @@
         content="Dalujo Construcciones es una empresa dedicada a la construcción, mantenimiento y reparación de construcciones">
     <meta name="author" content="Luis Belisario">
     <meta name="keywords"
-        content="construcción, vivienda, reparación, aramado, columnas, presupuesto, edificio, mantenimiento, adecuación">
+        content="construcción, vivienda, reparación, armado, columnas, presupuesto, proyecto, mantenimiento, adecuación, obra, casa, retak, bloque, ladrillo">
     <meta name="robots" content="index, follow">
     <!--BOOTSTRAP-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -28,49 +28,68 @@
     <script defer src="js/index.js"></script>
 </head>
 <body>
-    <!--INICIA NAV-->
-    <nav class="navbar navbar-expand-lg bg-light">
+
+    <!--INICIA ASIDE-->   
+    <aside class="bgNaranja d-flex justify-content-between py-2 px-3">
         <section>
-            <p>Contacto</p>
-            <a href="" target="_blank">Insta</a>
-            <a href="" target="_blank">Face</a>
-            <a href="" target="_blank">In</a>
-            <a href="" target="_blank">Youtube</a>
+          <p class="textWhite">Contáctanos</p>
+          <!--Cambiar el teléfono por una imagen-->
+        </section>
+        <section>
+          <a href="https://instagram.com/" target="_blank" class="px-1"><!--Conectar con Ig-->
+            <img src="assets/images/logoInstagram.svg" alt="Instagram" width="24vw">
+          </a>
+          <a href="https://es-la.facebook.com/" target="_blank" class="px-1"><!--Conectar con Facebook-->
+            <img src="assets/images/logoFacebook.svg" alt="FaceBook" width="24vw">
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" class="px-1"><!--Conectar con Youtube-->
+            <img src="assets/images/logoYouTube.svg" alt="YouTube" width="24vw">
+          </a>
+        </section>
+      </aside>
+    <!--TERMINA ASIDE-->
+
+    <!--INICIA NAV-->
+    <nav class="navbar sticky-top navbar-expand-lg bgNegro d-block navbar-dark">
+        <section>            
+            <div class="container-fluid">
+                <a class="navbar-brand textWhite" href="#">
+                    <img src="assets/images/Logo Dalujo.png" alt="" width="30" height="24"
+                        class="d-inline-block align-text-top">
+                    Dalujo Construcciones
+                </a>
+            </div>
         </section>
         <section>
             <div class="container-fluid">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="assets/images/Logo Dalujo.png" alt="" width="30" height="24"
-                            class="d-inline-block align-text-top">
-                        Dalujo Construcciones
-                    </a>
-                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Calculador y Cotizador</a>
+                            <a class="nav-link textWhite navDecoration" aria-current="page" href="#"><b>Cotizador</b></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle textWhite" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">Modelos</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item textWhite" href="#">Action</a></li>
+                                <li><a class="dropdown-item textWhite" href="#">Another action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item textWhite" href="#">Something else here</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nuestro Sistema Constructivo</a>
+                            <a class="nav-link textWhite" href="#">Nuestro Sistema Constructivo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Nosotros</a>
+                            <a class="nav-link textWhite" href="#">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Preguntas Frecuentes</a>
+                            <a class="nav-link textWhite" href="#">Preguntas Frecuentes</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -85,84 +104,152 @@
 
     <!--iNICIA HEADER-->
     <header>
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide aaa" data-bs-ride="carousel">
             <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="assets/images/construccion-casa-fases.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Construimos tu Casa</h5>
                   <p>Some representative placeholder content for the first slide.</p>
                 </div>
               </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="assets/images/descarga-1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Diseños 100% personalizados</h5>
                   <p>Some representative placeholder content for the second slide.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+                <img src="assets/images/Home_Construction__Romolo_Tavani_-_Fotolia-1024x682-1024x585.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Realizamos reparaciones y adecuaciones</h5>
                   <p>Some representative placeholder content for the third slide.</p>
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Anterior</span>
+              <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Siguiente</span>
+              <span class="visually-hidden">Next</span>
             </button>
-          </div>
+        </div>
     </header>
     <!--TERMINA HEADER-->
 
     <!--INICIA MAIN-->
-    <main>
-        <section>
-            <h1>Cotizador y Calculador</h1>
-            <p>Podés explorar soluciones y recibir presupuestos estimados para tu obra de forma rápida y sencilla.</p>
-            <p>Calcula</p>
-            <p>Cotiza</p>
-            <p>Contáctanos</p>
+    <main class="px-3">
+        <h1 class="my-5">Cotizador y Calculador</h1>
+        <section class="d-flex">
+            <article>
+                <img src="assets/images/Imagen1.jpg" alt=""><!--Buscar Imagen Adecuada-->
+            </article>
+            <article class="d-flex justify-content-center align-items-center flex-column mb-2">
+                <p>Podés explorar soluciones y recibir presupuestos estimados para tu obra de forma rápida y sencilla.</p>
+                <p>Calcula</p>
+                <p>Cotiza</p>
+                <p>Contáctanos</p>
+            </article>
         </section>
+        <h2 class="my-5">Modelos</h2>
         <section>
-            <h2>Modelos</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="assets/images/construccion-casa-fases.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Buenos Aires</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="assets/images/construccion-casa-fases.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Mendoza</h5>
+                      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="assets/images/construccion-casa-fases.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Córdoba</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                  </div>
+                </div>
+              </div> 
         </section>
-        <section>
-            <h2>Nuestro Sistema Constructivo</h2>
+        <h2 class="my-5">Nuestro Sistema Constructivo</h2>
+        <section class="py-3 container text-center">
+            <div class="row">
+                <div class="card col" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">Sistema Retak</h5>
+                    <p class="card-text">Sistema de construcción que emplea ladrillo de HCCA que combina la rapidez y limpieza de ejecución de los sistemas de construcción en seco, con la versatilidad de la construcción tradicional.</p>
+                    </div>
+                    <div class="card-body">
+                    <a href="pages/sistema.html" class="card-link">Conoce más</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="assets/images/construccion-casa-fases.jpg" alt="" class="index_main_sistema">
+                </div>
+                <div class="col">
+                    <img src="assets/images/construccion-casa-fases.jpg" alt="" class="index_main_sistema">
+                </div>
+                <div class="col">
+                    <img src="assets/images/construccion-casa-fases.jpg" alt="" class="index_main_sistema">
+                </div>
+            </div>
         </section>
     </main>
     <!--TERMINA MAIN-->
 
     <!--INICIA FOOTER-->
     <footer>
-        <section>
-            <img src="assets/images/Logo Dalujo.png" alt="Logo de Dalujo Construcciones">
+        <section class="bg_Negro px-4 py-2">
+          <article>
+            <img src="assets/images/Logo Dalujo.png" alt="Logo de Dalujo Construcciones" class="footer_Img_Logo">
             <p>Dalujo Construcciones</p>
-        </section>
-        <section>
+          </article>
+          <article>
             <h3>Contacto</h3>
-        </section>
-        <section>
+          </article>
+          <article>
             <h3>Dirección</h3>
+          </article>
+          <article>
+            <h3>Redes Sociales</h3>
+          </article>
         </section>
-        <section>
-            <h3>Nuestras Redes Sociales</h3>
-        </section>
-        <section>
-            <p>Hecho por Yanily Espinoza</p><!--Hacer link al portafolio-->
-        </section>
-    </footer>
+        <section class="d-flex justify-content-center align-items-center my-3">
+          <div class="mx-3">
+            <img src="assets/images/coracaozinho-para-o-luiz-otavio.svg" width="35" height="35" alt="Pequeño Corazón" >
+          </div>
+          <p class="footerP">2022 <a href="https://yanilyespinoza.github.io/Portfolio_Espinoza_SASS/" target="blank">Yanily Espinoza. Web Developer.</a></p>
+      </section>
+      </footer>
     <!--TERMINA FOOTER-->
 </body>
 

@@ -1,0 +1,41 @@
+// colors
+$colors:(
+  'green': hsl(132, 100%, 65%),
+  'yellow': hsl(38, 100%, 65%),
+  'white': hsl(131, 33%, 87%),
+  'darkGrey': hsla(127, 8%, 20%, 0.5),
+  'grey': hsl(0, 0%, 47%),
+  'blue': hsl(251, 92%, 30%),
+  'darkYellow': hsl(38, 56%, 32%),
+  'darkGreenTrans':hsla(132, 100%, 65%, 0.5),
+  'negro':hsl(120, 100%, 0%),
+  'violeta': hsl(326, 89%, 39%),
+  'naranja': hsl(17, 88%, 49%),
+);
+//breakpoints
+$breakpoints: (
+  ssm: 200px,
+  sm : 576px,
+  md : 768px,
+  lg : 992px,
+  xl : 1200px,
+);
+//mixins
+@mixin media_up ($breakpoint) {
+  @media screen and (min-width: map-get($breakpoints,$breakpoint)){
+    @content
+  }
+};
+// name selector{@include media_up(ssm/sm/md/lg){Element to changue}}
+@mixin d_flex ($f_direction,$j_content) {
+  display: flex;
+  flex-direction: $f_direction;
+  justify-content: $j_content;
+};
+// name selector{@include d_flex(column/row,flex-start/center/flex-end/space-between/space-around/space-evenly/);}
+@mixin contact_span ($btn_width,$btn_height,$btn_background){
+  width: $btn_width;
+  height: $btn_height;
+  background: $btn_background;
+};
+// name selector{@include contact_span(width,height,background);}

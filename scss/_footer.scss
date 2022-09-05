@@ -1,0 +1,9 @@
+.bg_Negro{
+    background-color: map-get($map: $colors, $key: "negro");
+    color: map-get($map: $colors, $key: 'white');
+}
+.footer_Img_Logo{
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+}
