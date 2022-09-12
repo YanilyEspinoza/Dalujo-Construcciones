@@ -1,0 +1,8 @@
+.styleNav{
+    list-style: none;
+}
+.navLink{
+    text-decoration: none;
+    color: map-get($map: $colors, $key: 'black');
+    margin: 0.4em;
+}

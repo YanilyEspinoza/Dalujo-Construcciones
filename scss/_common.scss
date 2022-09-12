@@ -2,6 +2,7 @@
 *{
     padding: 0rem;
     margin: 0rem;
+    box-sizing: border-box;
 }
 //GENERAL
 body{
@@ -19,4 +20,8 @@ body{
 }
 .index_main_sistema{
     width: 20vw;
+}
+//MAIN
+.index_main_imgUno{
+    max-width: 20em;
 }

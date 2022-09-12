@@ -36,5 +36,8 @@ $text_bold:700;
     color: map-get($map: $colors, $key: 'white');
 }
 .textGreen{
-    color: map-get($map: $colors, $key: 'green')
+    color: map-get($map: $colors, $key: 'green');
+}
+.textNaranja{
+    color: map-get($map: $colors, $key: 'naranja');
 }
