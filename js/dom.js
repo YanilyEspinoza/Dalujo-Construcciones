@@ -10,7 +10,7 @@ function cargarProductos() {
                         <td>${Producto.precio}</td>
                         <td>${Producto.precioFinal}</td>
                     </tr>`
-                    ListaDeProductos.innerHTML += fila
+                    listaDeProductos.innerHTML += fila
         })
     } 
 cargarProductos()
