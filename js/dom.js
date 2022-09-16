@@ -43,43 +43,29 @@ function agregarProducto() {
 
 //EVENTOS JAVASCRIPT//// NO LOGRO HACER FUNCIONAR EL BUSCADOR
 
-const inputFiltrar = document.getElementById("#filtroProducto")
-
+const inputFiltrar = document.getElementById("filtroProducto")
+let inputf = inputFiltrar.value
 function filtrarProductos() {
     inputFiltrar.value = inputFiltrar.value.trim().toUpperCase()
-    if (inputFiltrar.value !== "") {
-        const Resultado = Productos.filter(Producto => Producto.nombre.includes(inputFiltrar.value))
-              if (resultado.length === 0) {
-                console.clear()
-                console.warn("No se encontraron productos.")
-                cargarProductos(Productos)
-              } else {
-                cargarProductos(Resultado)
-              }
+    listaDeProductos.innerHTML = ""
+    if (inputf.value !== "") {
+        const Resultado = Productos.filter(Producto => Producto.nombre.includes(inputf))
+        listaDeProductos.innerHTML = Resultado.map(
+            NProductos.forEach(Producto => {
+                fila = `<tr>
+                            <td>${Producto.id}</td>
+                            <td class="nombre">${Producto.nombre}</td>
+                            <td>${Producto.medida}</td>
+                            <td>${Producto.precio}</td>
+                            <td>${Producto.precioFinal}</td>
+                        </tr>`
+                        ListaDeProductos.innerHTML += fila
+            })
+        )
     } else {
         cargarProductos(Productos)
     }
 }
 
-//inputFiltrar.addEventListener("#filtroProducto", filtrarProductos) 
+inputFiltrar.addEventListener("keyup", filtrarProductos) 
 
-
-const filtroProducto = document.getElementById("filtroProducto")
-
-
-// OTRO MÉTODO, NO LOGRO DESAPARECER TODA LA FILA /////////////////////////////////
-
-/* function buscarPorNombre() {
-    let input = document.getElementById('filtroProducto').value
-    input=input.toLowerCase();
-    let x = document.getElementsByClassName('nombre');
-    for (i = 0; i < x.length; i++) { 
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display="none";
-        }
-        else {
-            x[i].style.display="text-primary";                 
-        }
-    }
-}
- */
