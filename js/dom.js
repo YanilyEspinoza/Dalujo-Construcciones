@@ -2,7 +2,7 @@
 
 const cargarProductos = (param1) => {
     let fila = ""
-        Productos.forEach(Producto => {
+        param1.forEach(Producto => {
             fila = `<tr>
                         <td>${Producto.id}</td>
                         <td class="nombre">${Producto.nombre}</td>
@@ -10,9 +10,9 @@ const cargarProductos = (param1) => {
                         <td>${Producto.precio}</td>
                         <td>${Producto.precioFinal}</td>
                     </tr>`
-                    listaDeProductos.innerHTML += fila
+            ListaDeProductos.innerHTML += fila
         })
-    } 
+} 
 cargarProductos(Productos)
 
 const agregarProducto = () => {
@@ -36,11 +36,12 @@ const filtrarproductos = ()=>{
                         if (Resultado.length === 0) {
                         ListaDeProductos.innerHTML=""
                         }else{
-                            listaDeProductos.innerHTML=""
+                            ListaDeProductos.innerHTML=""
                             cargarProductos (Resultado)
                             console.table(Resultado)
                         }
                     } else {
+                        ListaDeProductos.innerHTML=""
                         cargarProductos (Productos)
                     }  
 }
