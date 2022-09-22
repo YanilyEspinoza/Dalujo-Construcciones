@@ -1,6 +1,6 @@
 ////////////////////             DOM                ////////////////////////////
 
-function cargarProductos() {
+const cargarProductos = (param1) => {
     let fila = ""
         Productos.forEach(Producto => {
             fila = `<tr>
@@ -13,59 +13,35 @@ function cargarProductos() {
                     listaDeProductos.innerHTML += fila
         })
     } 
-cargarProductos()
+cargarProductos(Productos)
 
-function agregarProducto() {
+const agregarProducto = () => {
     let id = NUEVOID()
     let nombre = prompt("Ingresa nombre del modelo:")
-    let medida = prompt("Ingresa la medida del modelo:")
-    let precio = prompt("Ingresa el precio del modelo:")
-    let precioFinal = parseFloat((precio * IVA).toFixed(2))
-    NProductos.push(new Producto(id, nombre, medida, precio, precioFinal))
-    function cargarProductos() {
-        let fila = ""
-            NProductos.forEach(Producto => {
-                fila = `<tr>
-                            <td>${Producto.id}</td>
-                            <td class="nombre">${Producto.nombre}</td>
-                            <td>${Producto.medida}</td>
-                            <td>${Producto.precio}</td>
-                            <td>${Producto.precioFinal}</td>
-                        </tr>`
-                        ListaDeProductos.innerHTML += fila
-            })
-        } 
-    cargarProductos()    
+    let medida = Number(prompt("Ingresa la medida del modelo:"))
+    let precio = Number(prompt("Ingresa el precio del modelo:"))
+    let precioFinal = Number((precio * IVA).toFixed(2))
+    Productos.push(new Producto(id, nombre, medida, precio, precioFinal))
+    cargarProductos()
 }
-///////////////BUSCAR OTRO METODO PARA CARGAR PRODUCTOS, PARA QUE SEA EN LA MISMA ARRAY//////////////
-/////////////// si preciono cancelar se carga como null ///////////////////////////////
-
 
 //EVENTOS JAVASCRIPT//// NO LOGRO HACER FUNCIONAR EL BUSCADOR
 
-const inputFiltrar = document.getElementById("filtroProducto")
-let inputf = inputFiltrar.value
-function filtrarProductos() {
-    inputFiltrar.value = inputFiltrar.value.trim().toUpperCase()
-    listaDeProductos.innerHTML = ""
-    if (inputf.value !== "") {
-        const Resultado = Productos.filter(Producto => Producto.nombre.includes(inputf))
-        listaDeProductos.innerHTML = Resultado.map(
-            NProductos.forEach(Producto => {
-                fila = `<tr>
-                            <td>${Producto.id}</td>
-                            <td class="nombre">${Producto.nombre}</td>
-                            <td>${Producto.medida}</td>
-                            <td>${Producto.precio}</td>
-                            <td>${Producto.precioFinal}</td>
-                        </tr>`
-                        ListaDeProductos.innerHTML += fila
-            })
-        )
-    } else {
-        cargarProductos(Productos)
-    }
+const inputFiltrar = document.querySelector("#filtroProducto")
+
+const filtrarproductos = ()=>{
+    let inputf =inputFiltrar.value.toUpperCase()
+    if (inputf !== ""){
+                    const Resultado = Productos.filter ((Producto)=> Producto.nombre.includes(inputf))
+                        if (Resultado.length === 0) {
+                        ListaDeProductos.innerHTML=""
+                        }else{
+                            ListaDeProductos.innerHTML=""
+                            cargarProductos (Resultado)
+                            console.table(Resultado)
+                        }
+                    } else {
+                        cargarProductos (Productos)
+                    }  
 }
-
-inputFiltrar.addEventListener("keyup", filtrarProductos) 
-
+inputFiltrar.addEventListener("keyup", filtrarproductos)
