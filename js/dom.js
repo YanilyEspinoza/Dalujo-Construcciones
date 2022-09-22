@@ -36,7 +36,7 @@ const filtrarproductos = ()=>{
                         if (Resultado.length === 0) {
                         ListaDeProductos.innerHTML=""
                         }else{
-                            ListaDeProductos.innerHTML=""
+                            listaDeProductos.innerHTML=""
                             cargarProductos (Resultado)
                             console.table(Resultado)
                         }
