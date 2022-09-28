@@ -9,6 +9,7 @@ const cargarProductos = (param1) => {
                         <td>${Producto.medida}</td>
                         <td>${Producto.precio}</td>
                         <td>${Producto.precioFinal}</td>
+                        <td><button id="btn${Producto.id}" class="btn btn-warning">Agregar<button></td>
                     </tr>`
             ListaDeProductos.innerHTML += fila
         })
@@ -25,7 +26,7 @@ const agregarProducto = () => {
     cargarProductos()
 }
 
-//EVENTOS JAVASCRIPT//// NO LOGRO HACER FUNCIONAR EL BUSCADOR
+//EVENTOS JAVASCRIPT//// 
 
 const inputFiltrar = document.querySelector("#filtroProducto")
 
@@ -38,7 +39,6 @@ const filtrarproductos = ()=>{
                         }else{
                             ListaDeProductos.innerHTML=""
                             cargarProductos (Resultado)
-                            console.table(Resultado)
                         }
                     } else {
                         ListaDeProductos.innerHTML=""
@@ -46,3 +46,27 @@ const filtrarproductos = ()=>{
                     }  
 }
 inputFiltrar.addEventListener("keyup", filtrarproductos)
+
+// EVENTO BOTON DE AGREGAR PRODUCTOS
+
+const eventoBtnAgregar = () => {
+    Productos.forEach(Prod => {
+        const btn = document.querySelector(`#btn${Prod.id}`)
+        btn.addEventListener("click", ()=> console.log("Hiciste click"))
+    })
+}
+eventoBtnAgregar()
+
+// BOTON DE AGREGAR PRODUCTOS
+const agregarAlCarrito =(id)=> {
+    const Producto = Productos.find(Prod => Prod.id == id)
+          Carrito.push(Producto)
+          localStorage.setItem("Carrito", JSON.stringify(Carrito))
+}
+
+function recuperarCarrito() {
+    if (localStorage.getItem("Carrito")) {
+        Carrito = JSON.parse(localStorage.getItem("Carrito"))
+    }
+}
+recuperarCarrito()

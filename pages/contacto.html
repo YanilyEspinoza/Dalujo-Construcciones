@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,11 +23,12 @@
   <!--CSS-->
   <link rel="stylesheet" href="../assets/css/style.css">
   <!--WOW-->
-  <link rel="stylesheet" href="../assets/css/animate.css">
+<!--   <link rel="stylesheet" href="../assets/css/animate.css"> -->
   <!--JS-->
-  <script src="../js/variables.js"></script>
+<!--   <script src="../js/variables.js"></script>
   <script defer src="../js/index.js"></script>
-  <script defer src="../js/dom.js"></script>
+  <script defer src="../js/dom.js"></script> -->
+  <script defer src="../js/localstorage.js"></script>
 </head>
 
 <body>
@@ -35,7 +37,8 @@
     <section>
       <div class="container-fluid">
         <a class="navbar-brand textWhite" href="../index.html">
-          <img src="../assets/images/Logo Dalujo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          <img src="../assets/images/Logo Dalujo.png" alt="" width="30" height="24"
+            class="d-inline-block align-text-top">
           Dalujo Construcciones
         </a>
       </div>
@@ -64,7 +67,7 @@
               <a class="nav-link textWhite" href="./preguntas.html">Preguntas Frecuentes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link textWhite navDecoration"  aria-current="page" href="#"><b>Contacto</b></a>
+              <a class="nav-link textWhite navDecoration" aria-current="page" href="#"><b>Contacto</b></a>
             </li>
           </ul>
         </div>
@@ -73,8 +76,18 @@
   </nav>
   <!--TERMINA NAV-->
 
-
-
+  <!--INICIA MAIN-->
+  <main>
+    <h1>Dalujo Contácto</h1>
+    <h2>Para solicitudes especiales no dudes en contactarnos</h2>
+    <form class="d-flex align-items-center flex-column">
+      <input type="text" id="inputNombre" placeholder="Yanily ..." class="m-1">
+      <input type="email" id="inputEmail" placeholder="Dalujo@gmail.com" class="m-1">
+      <textarea id="inputComentarios" cols="23" rows="5" placeholder="Comentarios..." class="m-1"></textarea>
+      <button id="btnEnviar" class="btn btn-warning m-1">ENVIAR</button>
+    </form>
+  </main>
+  <!--TERMINA MAIN-->
 
   <!--INICIA FOOTER-->
   <footer class="container max_width">
@@ -139,4 +152,5 @@
   </footer>
   <!--TERMINA FOOTER-->
 </body>
+
 </html>
