@@ -34,12 +34,8 @@ const filtrarproductos = ()=>{
     let inputf =inputFiltrar.value.toUpperCase()
     if (inputf !== ""){
                     const Resultado = Productos.filter ((Producto)=> Producto.nombre.includes(inputf))
-                        if (Resultado.length === 0) {
-                        ListaDeProductos.innerHTML=""
-                        }else{
-                            ListaDeProductos.innerHTML=""
-                            cargarProductos (Resultado)
-                        }
+                        Resultado.length === 0 ? ListaDeProductos.innerHTML="" : ListaDeProductos.innerHTML="" 
+                        cargarProductos (Resultado)
                     } else {
                         ListaDeProductos.innerHTML=""
                         cargarProductos (Productos)
