@@ -43,12 +43,26 @@ const filtrarproductos = ()=>{
 }
 inputFiltrar.addEventListener("keyup", filtrarproductos)
 
+//LIBRERIA  sweetalert2
+const Bienvenida = ()=> {
+    Swal.fire({
+        toast: true,
+        title: 'Producto agregado al carrito',
+        timer: 2500,
+        position: 'start',
+        timerProgressBar: true,
+        showConfirmButton: false,
+        background:  'green',
+        color: 'white'
+    })
+}
+
 // EVENTO BOTON DE AGREGAR PRODUCTOS
 
 const eventoBtnAgregar = () => {
     Productos.forEach(Prod => {
         const btn = document.querySelector(`#btn${Prod.id}`)
-        btn.addEventListener("click", ()=> console.log("Hiciste click"))
+        btn.addEventListener("click", ()=> Bienvenida())
     })
 }
 eventoBtnAgregar()
