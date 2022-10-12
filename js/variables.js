@@ -6,13 +6,18 @@ const Carrito = []
 const IVA = 1.21
 const ListaDeProductos = document.querySelector("#listaDeProductos")
 
+const contenedor = document.querySelector(".contenedor")
+//VARIABLES 
+let modelos = []
+let documentoModelos = ""
+
 // CONSTANTE DE RUTA A NUESTRA BASE DE DATOS EN FORMATO JSON
 const URL = "../dataBase/modelos.json"
 
 const mostrarError = ()=> {
-    return `<div class="error">
-                <h2>¡Ups...!</h2>
-                <img src="../assets/images/hombrePensando.jpg">
+    return `<div class="card d-flex align-items-center">
+                <h2>¡Ups... lo sentimos!</h2>
+                <img class="errorDeCarga" src="../assets/images/hombrePensando.jpg">
                 <p>No pudimos cargar la información.</p>
                 <p>Por favor, intenta nuevamente en unos minutos.</p>
             </div>`
@@ -21,14 +26,14 @@ const mostrarError = ()=> {
 const mostrarCard = (contenido)=> {
     const {id, nombre, precio, precioFinal, imagen, descripcion, medida} = contenido
     return `<div class="card">
-                <img id="${id}" src="../assets/images/${imagen}" title="${nombre} - ${categoria}" alt="${descripcion}">
+                <img id="${id}" class="errorDeCarga" src="../assets/images/${imagen}" title="${nombre}" alt="${descripcion}">
                 <div>
                 <p title="${nombre}">${nombre} - ${medida}</p>
                 <p >${precio}</p>
                 <p >${precioFinal}</p>
                 </div>
                 <div class="align-btn">
-                    <button class="card-button" id="${id}">AGREGAR</button>
+                    <button class="btn btn-warning m-1" id="${id}">AGREGAR</button>
                 </div>
             </div>`
 }
@@ -37,14 +42,19 @@ const cargarContenido = async () => {
     try {
         const response = await fetch(URL)
         const data = await response.json()
-        Productos = data
-        console.table(Productos)
-        Productosx.forEach(param => contenidoHTML += mostrarCard(param))
+        modelos = data
+        modelos.forEach(param => documentoModelos += mostrarCard(param))
     }
     catch (error) {
-        contenidoHTML += mostrarError()
+        documentoModelos += mostrarError()
     }
     finally {
-        contenedor.innerHTML = contenidoHTML
+        contenedor.innerHTML = documentoModelos
     }
 }
+
+document.addEventListener("DOMContentLoaded", async ()=> {
+    const espero = await cargarContenido()
+          //activarClicks()
+          console.log("Hola Hola Perinola")
+})

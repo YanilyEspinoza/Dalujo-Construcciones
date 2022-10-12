@@ -6,7 +6,7 @@
     "medida": "500 MTS2",
     "precio": 500000,
     "precioFinal": 550000,
-    "imagen": "cordoba1.webp",
+    "imagen": "cordoba1.jpg",
     "descripcion": "Hermoso diseño para un terreno amplio, con multiples habitaciones con todas las comodidades"
     },
     {
@@ -16,7 +16,7 @@
     "medida": "300 MTS2",
     "precio": 500000,
     "precioFinal": 550000,
-    "imagen": "buenosAires1.webp",
+    "imagen": "buenosAires1.jpg",
     "descripcion": "Diseño ultra estilisado, para vivir con todas las comodidades con un gran aprovechamiento del espacio"
     },
     {
@@ -36,7 +36,7 @@
     "medida": "500 MTS2",
     "precio": 500000,
     "precioFinal": 550000,
-    "imagen": "cordoba2.webp",
+    "imagen": "cordoba2.jpg",
     "descripcion": "Hermoso diseño para un terreno amplio, con multiples habitaciones con todas las comodidades"
     },
     {
@@ -46,7 +46,7 @@
     "medida": "300 MTS2",
     "precio": 500000,
     "precioFinal": 550000,
-    "imagen": "buenosAires2.webp",
+    "imagen": "buenosAires2.jpg",
     "descripcion": "Diseño ultra estilisado, para vivir con todas las comodidades con un gran aprovechamiento del espacio"
     },
     {
@@ -56,7 +56,7 @@
     "medida": "100 MTS2",
     "precio": 500000,
     "precioFinal": 550000,
-    "imagen": "corrientes2.webp",
+    "imagen": "corrientes2.jpg",
     "descripcion": "Diseño para espacios reducidos, toma todas las oportunidades para cubrir eficientemente todas las necesidades de una familia tipo"
     }
 ]
