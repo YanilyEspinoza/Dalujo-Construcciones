@@ -7,16 +7,23 @@
 //GENERAL
 body{
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .logoDalujoConstrucciones{
     width: 20vw;
 }
+.index_header_img{
+    text-decoration: none;
+}
     //ASIDE
 .bgNaranja{
-	background-color: map-get($map: $colors, $key: 'naranja')
+	background-color: map-get($map: $colors, $key: 'naranja');
 }
+.bg_Negro,
 .bgNegro{
-    background-color: map-get($map: $colors, $key: 'negro')
+    background-color: map-get($map: $colors, $key: 'black');
 }
 .index_main_sistema{
     width: 20vw;
@@ -38,10 +45,117 @@ input[type=search] {
     -webkit-transition: width 0.15s ease-in-out;
     transition: width 0.15s ease-in-out;
 }
+.demandaEstilos{
+    background-color: map-get($map: $colors, $key: 'rojo');
+    border-radius: 100%;
+    color: map-get($map: $colors, $key: 'blancoPuro');
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 input[type=search]:focus {
     width: 40%;
 }
 .errorDeCarga{
     width: 30vw;
 }
-
+//CONTACTO
+.form-control:focus{
+    border-color:  map-get($map: $colors, $key: 'naranja')!important;
+    box-shadow: 0 0 5px  map-get($map: $colors, $key: 'naranja') !important;
+}
+//MODELOS
+.imgmodelos{
+  width: 100%;
+  height: auto;
+}
+.modelos_grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em;
+}
+.errorDeCarga{
+    width: 30vw;
+}
+        //ESTILOS SOBRE HOVER
+.ubicacion_modelos{ //CAMBIAR
+  position: relative;
+}
+.ubicacion_img{
+  line-height: 0;
+  overflow: hidden;
+}
+.ubicacion_img .imgmodelos{ //CAMBIAR
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+  transform: scale(1.1);
+}
+.ubicacion_titulos{
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  background: map-get($map: $colors, $key: 'rojoProfundo');
+  color: map-get($map: $colors, $key: 'white');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ubicacion_modelos:hover .ubicacion_titulos{ //CAMBIAR
+  opacity: 1;
+}
+.ubicacion_modelos:hover .ubicacion_img .imgmodelos{ //CAMBIAR
+  filter: blur(2px);
+}
+        //PARA EL TOUCH
+@media (hover: none) { 
+  .ubicacion_titulos{
+    opacity: 1;
+  }
+  .ubicacion_img .imgmodelos{ //CAMBIAR
+    filter: blur(2px);
+  }
+}
+//CARRITO
+input[type="number"]{
+    text-align: end;
+    font-size: 1em;
+    border: none;
+    background-color: map-get($map: $colors, $key: 'blancoPuro');
+    color: map-get($map: $colors, $key: 'naranja');
+    padding-right: 0.2em;
+}
+.cantidad{
+    background-color: map-get($map: $colors, $key: 'naranja');
+    border-radius: 45px;
+    box-shadow: 0em 0.5em 0.7em map-get($map: $colors, $key: 'naranja');
+    font-size: 0.8em;
+    width: 8em;
+}
+.imagenCarrito{
+    max-width: 50%;
+}
+#disminuir,
+#aumentar{
+    color: map-get($map: $colors, $key: 'naranja');
+    background-color: map-get($map: $colors, $key: 'blancoPuro');
+    border: none;
+    font-size: 1.4em;
+    cursor: pointer;
+    padding: 0.2em 0.1em 0.2em 0.3em;
+}
+#disminuir{
+    border-radius: 45px 0 0 45px;
+}
+#aumentar{
+    border-radius: 0 45px 45px 0;
+}

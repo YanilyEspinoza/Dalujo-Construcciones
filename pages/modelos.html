@@ -19,15 +19,17 @@
     crossorigin="anonymous"></script>
   <!--FAVICON-->
   <link rel="shortcut icon" href="../assets/images/Logo Dalujo.png" type="image/x-icon">
+  <!--GOOGLEFONTS-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <!--CSS-->
   <link rel="stylesheet" href="../assets/css/style.css">
-  <!--WOW
-  <link rel="stylesheet" href="../assets/css/animate.css">-->
   <!--JS-->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script defer src="../js/variables.js"></script>
-  <script defer src="../js/index.js"></script>
+  <script src="../js/let_const.js"></script>
   <script defer src="../js/dom.js"></script>
+  <script defer src="../js/general.js"></script>
+  <script defer src="../js/modelos.js"></script>
+  <!--SWEETALERT2-->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -36,7 +38,8 @@
     <section>
       <div class="container-fluid">
         <a class="navbar-brand textWhite" href="../index.html">
-          <img src="../assets/images/Logo Dalujo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          <img src="../assets/images/Logo Dalujo.png" alt="" width="30" height="24"
+            class="d-inline-block align-text-top">
           Dalujo Construcciones
         </a>
       </div>
@@ -53,7 +56,7 @@
               <a class="nav-link textWhite" href="./cotizador.html">Cotizador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link textWhite navDecoration"  aria-current="page" href="#"><b>Modelos</b></a>
+              <a class="nav-link textWhite" href="#">Modelos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link textWhite" href="./sistema.html">Nuestro Sistema Constructivo</a>
@@ -65,9 +68,12 @@
               <a class="nav-link textWhite" href="./preguntas.html">Preguntas Frecuentes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link textWhite"  href="./contacto.html">Contacto</a>
+              <a class="nav-link textWhite navDecoration" aria-current="page" href="./contacto.html"><b>Contacto</b></a>
             </li>
           </ul>
+          <a href="carrito.html" class="index_heder_img px-1">
+            <span class="carrito material-symbols-outlined" alt="Carrito de compras">shopping_cart</span><span id="numCarrito" class="position-absolute top-0 end-0 badge border border-light rounded-circle bg-danger p-1"><span class="visually-hidden">unread messages</span></span>
+          </a>
         </div>
       </div>
     </section>
@@ -76,23 +82,32 @@
 
   <!--INICIA MAIN-->
   <main class="p-2">
-    <h1>Modelos</h1>
-    <h3>Listado de Modelos:</h3>
-    <section class="text-center">
-      <article class="d-flex justify-content-center align-items-center p-3">
-        <p class="px-3">Buscar:</p>
-        <input type="search" id="filtroProducto" placeholder="ej: Cordoba...">
-      </article>
+    <h1 class="p-2">Selección de nuestros mejores Modelos:</h1>
+    <h3 class="p-2 text-center">Modelos Grandes</h3>
+    <section class="text-center" id="modelos_section_grandes">
       <article class="contenedor">
         <div>
           <p class="text-center">La información se está cargando</p>
           <img src="../assets/images/constructoresBuscando.gif" alt="Esperando a que cargue la página">
         </div>
       </article>
-      <article class="p-5">
-        <button onclick="dataBase()" class="btn btn-warning">LISTAR PRODUCTOS</button>
-        <button onclick="agregarProducto()" class="btn btn-warning">AGREGAR PRODUCTO</button>
-        </footer>
+    </section>
+    <h3 class="p-2 text-center">Modelos Medianos</h3>
+    <section class="text-center" id="modelos_section_medianos">
+      <article class="contenedor">
+        <div>
+          <p class="text-center">La información se está cargando</p>
+          <img src="../assets/images/constructoresBuscando.gif" alt="Esperando a que cargue la página">
+        </div>
+      </article>
+    </section>
+    <h3 class="p-2 text-center">Modelos Pequeños</h3>
+    <section class="text-center" id="modelos_section_pequenos">
+      <article class="contenedor">
+        <div>
+          <p class="text-center">La información se está cargando</p>
+          <img src="../assets/images/constructoresBuscando.gif" alt="Esperando a que cargue la página">
+        </div>
       </article>
   </main>
   <!--TERMINA MAIN-->
@@ -126,19 +141,9 @@
             <a href="./preguntas.html" class="navFooter fs-6">Preguntas Frecuentes</a>
           </li>
           <li>
-            <a href="./contacto.html" class="navFooter fs-6">Contacto</a>
+            <a href="pages/contacto.html" class="navFooter fs-6">Contacto</a>
           </li>
         </ul>
-      </article>
-      <article class="col p-3">
-        <h3 class="textNaranja">Contacto</h3>
-        <p>Caballito, Buenos Aires.</p>
-        <p><b>Teléfono:</b></p>
-        <p>011-2653-2248</p>
-        <p><b>Correo:</b></p>
-        <p>dalujo@gmail.com</p>
-        <p><b>web:</b></p>
-        <p>Dalujo.com.ar</p>
       </article>
       <article class="col p-3">
         <h3 class="textNaranja">Redes Sociales</h3>
@@ -148,6 +153,22 @@
         <p>@Dalujo</p>
         <p><b>FaceBook:</b></p>
         <p>@Dalujo</p>
+      </article>
+      <article class="col p-3">
+        <h3 class="textNaranja">Contacto</h3>
+        <p>Caballito, Buenos Aires.</p>
+        <p><b>Teléfono:</b>011-2653-2248</p>
+        <p><b>Correo:</b></p>
+        <p>dalujo@gmail.com</p>
+        <form class="">
+          <div class="form">
+            <label for="newsletter">Newsletter:</label>
+            <input type="email" class="form-control" id="newsletter" placeholder="dalujo@gmail.com" value="dalujo@gmail.com">
+          </div>
+          <button id="btnNewsletter" type="button" class="btn btn-warning my-1">
+            Enviar
+        </button>
+        </form>
       </article>
     </section>
     <section class="d-flex justify-content-center align-items-center my-3">

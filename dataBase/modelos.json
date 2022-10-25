@@ -2,61 +2,49 @@
     {
     "id": 1,
     "categoria": "GRANDE",
-    "nombre": "MODELO CORDOBA I",
-    "medida": "500 MTS2",
-    "precio": 500000,
-    "precioFinal": 550000,
-    "imagen": "cordoba1.jpg",
+    "nombre": "MODELO CORRIENTES I",
+    "ruta": "#",
+    "imagen": "corrientes1.webp",
     "descripcion": "Hermoso diseño para un terreno amplio, con multiples habitaciones con todas las comodidades"
     },
     {
     "id": 2,
     "categoria": "MEDIANO",
     "nombre": "MODELO BUENOS AIRES I",
-    "medida": "300 MTS2",
-    "precio": 500000,
-    "precioFinal": 550000,
+    "ruta": "#",
     "imagen": "buenosAires1.jpg",
     "descripcion": "Diseño ultra estilisado, para vivir con todas las comodidades con un gran aprovechamiento del espacio"
     },
     {
     "id": 3,
-    "categoria": "PEQUEÑO",
-    "nombre": "MODELO CORRIENTES I",
-    "medida": "100 MTS2",
-    "precio": 500000,
-    "precioFinal": 550000,
-    "imagen": "corrientes1.webp",
+    "categoria": "PEQUENO",
+    "nombre": "MODELO CORDOBA I",
+    "ruta": "#",
+    "imagen": "cordoba1.jpg",
     "descripcion": "Diseño para espacios reducidos, toma todas las oportunidades para cubrir eficientemente todas las necesidades de una familia tipo"
     },
         {
     "id": 4,
     "categoria": "GRANDE",
-    "nombre": "MODELO CORDOBA II",
-    "medida": "500 MTS2",
-    "precio": 500000,
-    "precioFinal": 550000,
-    "imagen": "cordoba2.jpg",
+    "nombre": "MODELO CORRIENTES II",
+    "ruta": "#",
+    "imagen": "corrientes2.jpg",
     "descripcion": "Hermoso diseño para un terreno amplio, con multiples habitaciones con todas las comodidades"
     },
     {
     "id": 5,
     "categoria": "MEDIANO",
     "nombre": "MODELO BUENOS AIRES II",
-    "medida": "300 MTS2",
-    "precio": 500000,
-    "precioFinal": 550000,
+    "ruta": "#",
     "imagen": "buenosAires2.jpg",
     "descripcion": "Diseño ultra estilisado, para vivir con todas las comodidades con un gran aprovechamiento del espacio"
     },
     {
     "id": 6,
-    "categoria": "PEQUEÑO",
-    "nombre": "MODELO CORRIENTES II",
-    "medida": "100 MTS2",
-    "precio": 500000,
-    "precioFinal": 550000,
-    "imagen": "corrientes2.jpg",
+    "categoria": "PEQUENO",
+    "nombre": "MODELO CORDOBA II",
+    "imagen": "cordoba2.jpg",
+    "ruta": "#",
     "descripcion": "Diseño para espacios reducidos, toma todas las oportunidades para cubrir eficientemente todas las necesidades de una familia tipo"
     }
 ]

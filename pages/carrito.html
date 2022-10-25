@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--CEO-->
   <meta name="description"
-    content="Modelos de Viviendas de Dalujo Construcciones, donde se puede observar datos referentes a diseño y costo para construcción de viviendas">
+    content="Documento de contacto de Dalujo Construcciones, acceso rápido a nuestros asesores y redes sociales">
   <meta name="author" content="Luis Belisario">
   <meta name="keywords"
     content="cotizador, construcción, vivienda, reparación, armado, columnas, presupuesto, proyecto, mantenimiento, adecuación, obra, casa, retak, bloque, ladrillo">
@@ -19,15 +19,17 @@
     crossorigin="anonymous"></script>
   <!--FAVICON-->
   <link rel="shortcut icon" href="../assets/images/Logo Dalujo.png" type="image/x-icon">
+  <!--GOOGLEFONTS-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <!--CSS-->
   <link rel="stylesheet" href="../assets/css/style.css">
-  <!--WOW
-  <link rel="stylesheet" href="../assets/css/animate.css">-->
   <!--JS-->
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script defer src="../js/variables.js"></script>
-  <script defer src="../js/index.js"></script>
+  <script src="../js/let_const.js"></script>
   <script defer src="../js/dom.js"></script>
+  <script defer src="../js/general.js"></script>
+  <script defer src="../js/carrito.js"></script>
+  <!--SWEETALERT2-->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -36,7 +38,8 @@
     <section>
       <div class="container-fluid">
         <a class="navbar-brand textWhite" href="../index.html">
-          <img src="../assets/images/Logo Dalujo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+          <img src="../assets/images/Logo Dalujo.png" alt="" width="30" height="24"
+            class="d-inline-block align-text-top">
           Dalujo Construcciones
         </a>
       </div>
@@ -53,7 +56,7 @@
               <a class="nav-link textWhite" href="./cotizador.html">Cotizador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link textWhite navDecoration"  aria-current="page" href="#"><b>Modelos</b></a>
+              <a class="nav-link textWhite" href="./modelos.html">Modelos</a>
             </li>
             <li class="nav-item">
               <a class="nav-link textWhite" href="./sistema.html">Nuestro Sistema Constructivo</a>
@@ -65,9 +68,12 @@
               <a class="nav-link textWhite" href="./preguntas.html">Preguntas Frecuentes</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link textWhite"  href="./contacto.html">Contacto</a>
+              <a class="nav-link textWhite navDecoration" aria-current="page" href="./contacto.html"><b>Contacto</b></a>
             </li>
           </ul>
+          <a href="#" class="index_heder_img px-1">
+            <span class="carrito material-symbols-outlined" alt="Carrito de compras">shopping_cart</span><span id="numCarrito" class="position-absolute top-0 end-0 badge border border-light rounded-circle bg-danger p-1"><span class="visually-hidden">unread messages</span></span>
+          </a>
         </div>
       </div>
     </section>
@@ -75,34 +81,15 @@
   <!--TERMINA NAV-->
 
   <!--INICIA MAIN-->
-  <main class="p-2">
-    <h1>Modelos</h1>
-    <h3>Listado de Modelos:</h3>
-    <section class="text-center">
-      <article class="d-flex justify-content-center align-items-center p-3">
-        <p class="px-3">Buscar:</p>
-        <input type="search" id="filtroProducto" placeholder="ej: Cordoba...">
-      </article>
-      <article class="d-flex justify-content-center">
-        <table class="table">
-          <thead>
-            <tr class="table-warning">
-              <th scope="col">ID</th>
-              <th scope="col">NOMBRE</th>
-              <th scope="col">MEDIDAS</th>
-              <th scope="col">PRECIO</th>
-              <th scope="col">PRECIO + IVA</th>
-            </tr>
-          </thead>
-          <tbody id="listaDeProductos"></tbody>
-        </table>
-      </article>
-      <article class="p-5">
-        <button onclick="dataBase()" class="btn btn-warning">LISTAR PRODUCTOS</button>
-        <button onclick="agregarProducto()" class="btn btn-warning">AGREGAR PRODUCTO</button>
-      </footer>
-      </article>
-  </main>
+    <main class="container">
+        <h1>Carrito de Compras:</h1>
+        <section class="text-center" id="areaCarrito">
+        </section>
+        <article id="total" class="p-3 d-flex justify-content-end">
+        </article>
+        <article id="btn_comprar" class="p-3 d-flex justify-content-end">
+        </article>
+    </main>
   <!--TERMINA MAIN-->
 
   <!--INICIA FOOTER-->
@@ -122,7 +109,7 @@
             <a href="./cotizador.html" class="navFooter fs-6">Cotizador</a>
           </li>
           <li>
-            <a href="#" class="navFooter fs-6">Modelos</a>
+            <a href="./modelos.html" class="navFooter fs-6">Modelos</a>
           </li>
           <li>
             <a href="./sistema.html" class="navFooter fs-6">Sistema Constructivo</a>
@@ -134,19 +121,9 @@
             <a href="./preguntas.html" class="navFooter fs-6">Preguntas Frecuentes</a>
           </li>
           <li>
-            <a href="./contacto.html" class="navFooter fs-6">Contacto</a>
+            <a href="pages/contacto.html" class="navFooter fs-6">Contacto</a>
           </li>
         </ul>
-      </article>
-      <article class="col p-3">
-        <h3 class="textNaranja">Contacto</h3>
-        <p>Caballito, Buenos Aires.</p>
-        <p><b>Teléfono:</b></p>
-        <p>011-2653-2248</p>
-        <p><b>Correo:</b></p>
-        <p>dalujo@gmail.com</p>
-        <p><b>web:</b></p>
-        <p>Dalujo.com.ar</p>
       </article>
       <article class="col p-3">
         <h3 class="textNaranja">Redes Sociales</h3>
@@ -156,6 +133,22 @@
         <p>@Dalujo</p>
         <p><b>FaceBook:</b></p>
         <p>@Dalujo</p>
+      </article>
+      <article class="col p-3">
+        <h3 class="textNaranja">Contacto</h3>
+        <p>Caballito, Buenos Aires.</p>
+        <p><b>Teléfono:</b>011-2653-2248</p>
+        <p><b>Correo:</b></p>
+        <p>dalujo@gmail.com</p>
+        <form class="">
+          <div class="form">
+            <label for="newsletter">Newsletter:</label>
+            <input type="email" class="form-control" id="newsletter" placeholder="dalujo@gmail.com" value="dalujo@gmail.com">
+          </div>
+          <button id="btnNewsletter" type="button" class="btn btn-warning my-1">
+            Enviar
+        </button>
+        </form>
       </article>
     </section>
     <section class="d-flex justify-content-center align-items-center my-3">

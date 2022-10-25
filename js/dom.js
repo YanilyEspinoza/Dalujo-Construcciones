@@ -1,82 +1,38 @@
-////////////////////             DOM                ////////////////////////////
-
-const cargarProductos = (param1) => {
-    let fila = ""
-        param1.forEach(Producto => {
-            fila = `<tr>
-                        <td>${Producto.id}</td>
-                        <td class="nombre">${Producto.nombre}</td>
-                        <td>${Producto.medida}</td>
-                        <td>${Producto.precio}</td>
-                        <td>${Producto.precioFinal}</td>
-                        <td><button id="btn${Producto.id}" class="btn btn-warning">Agregar<button></td>
-                    </tr>`
-            ListaDeProductos.innerHTML += fila
-        })
-} 
-cargarProductos(Productos)
-
-const agregarProducto = () => {
-    let id = NUEVOID()
-    let nombre = prompt("Ingresa nombre del modelo:")
-    let medida = Number(prompt("Ingresa la medida del modelo:"))
-    let precio = Number(prompt("Ingresa el precio del modelo:"))
-    let precioFinal = Number((precio * IVA).toFixed(2))
-    Productos.push(new Producto(id, nombre, medida, precio, precioFinal))
-    cargarProductos()
-}
-
-//EVENTOS JAVASCRIPT//// 
-
-const inputFiltrar = document.querySelector("#filtroProducto")
-
-const filtrarproductos = ()=>{
-    let inputf =inputFiltrar.value.toUpperCase()
-    if (inputf !== ""){
-                    const Resultado = Productos.filter ((Producto)=> Producto.nombre.includes(inputf))
-                        Resultado.length === 0 ? ListaDeProductos.innerHTML="" : ListaDeProductos.innerHTML="" 
-                        cargarProductos (Resultado)
-                    } else {
-                        ListaDeProductos.innerHTML=""
-                        cargarProductos (Productos)
-                    }  
-}
-inputFiltrar.addEventListener("keyup", filtrarproductos)
-
-//LIBRERIA  sweetalert2
-const Bienvenida = ()=> {
-    Swal.fire({
-        toast: true,
-        title: 'Producto agregado al carrito',
-        timer: 2500,
-        position: 'start',
-        timerProgressBar: true,
-        showConfirmButton: false,
-        background:  'green',
-        color: 'white'
-    })
-}
-
-// EVENTO BOTON DE AGREGAR PRODUCTOS
-
-const eventoBtnAgregar = () => {
-    Productos.forEach(Prod => {
-        const btn = document.querySelector(`#btn${Prod.id}`)
-        btn.addEventListener("click", ()=> Bienvenida())
-    })
-}
-eventoBtnAgregar()
-
-// BOTON DE AGREGAR PRODUCTOS
-const agregarAlCarrito =(id)=> {
-    const Producto = Productos.find(Prod => Prod.id == id)
-          Carrito.push(Producto)
-          localStorage.setItem("Carrito", JSON.stringify(Carrito))
-}
-
-function recuperarCarrito() {
-    if (localStorage.getItem("Carrito")) {
-        Carrito = JSON.parse(localStorage.getItem("Carrito"))
-    }
-}
-recuperarCarrito()
+// CONSTANTES QUE TRABAJAN CON EL DOM
+    //DOC HTML EN GENERAL
+    const inputNewsletter = document.querySelector("#newsletter")
+    const enviarNewsLetter = document.querySelector("#btnNewsletter")
+    const navNumCarrito = document.querySelector("#numCarrito")
+    
+        //DOC HTML COTIZADOR
+    const ListaDeProductos = document.querySelector("#listaDeProductos")
+    const inputFiltrar = document.querySelector("#filtroProducto")
+    const btnAgregarProd = document.querySelector("#agregarProd")
+    const btnAZ = document.querySelector("#aZ")
+    const btnZA = document.querySelector("#zA")
+        //DOC HTML CARRITO
+    const cantidadProducto = document.querySelector("#inputCantidad")
+    const btnDisminuir = document.querySelector("#disminuir")
+    const btnAumentar = document.querySelector("#aumentar")
+    const listaDeCarrito = document.querySelector("#areaCarrito")
+    const datosTotales = document.querySelector("#total")
+    const btnComprar = document.querySelector("#btn_comprar")
+    
+        //DOC HTML MODELOS
+    const modelosGrandes = document.querySelector("#modelos_section_grandes")
+    const modelosMedianos = document.querySelector("#modelos_section_medianos")
+    const modelosPequenos = document.querySelector("#modelos_section_pequenos")
+    
+        //DOC HTML AGREGARPROD
+    const inputNombreProd = document.querySelector("#inputNombreProd")
+    const inputMedida = document.querySelector("#inputMedida")
+    const inputPrecio = document.querySelector("#inputPrecio")
+    const inputImagen = document.querySelector("#inputImagen")
+    
+        //DOC HTML CONTACTO
+    const inputNombre = document.querySelector("#inputNombre")
+    const inputApellido = document.querySelector("#inputApellido")
+    const inputEmail = document.querySelector("#inputEmail")
+    const inputDate = document.querySelector("#inputDate")
+    const inputComentarios = document.querySelector("#inputComentarios")
+    const btnEnviar = document.querySelector("#btnEnviar")

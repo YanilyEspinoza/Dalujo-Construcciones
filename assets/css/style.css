@@ -3,12 +3,15 @@ h1,
 h2,
 h3,
 h4,
-h5 {
-  font-family: "Alegreya Sans", sans-serif; }
+h5,
+.demandaEstilos {
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 700; }
 
 p {
   font-family: "Oxygen", sans-serif;
-  margin: 0px; }
+  margin: 0px;
+  font-weight: 400; }
 
 h1 {
   color: #eb4d0f; }
@@ -31,6 +34,7 @@ h2 {
 
 .navLink {
   text-decoration: none;
+  color: black;
   margin: 0.4em; }
 
 * {
@@ -39,14 +43,21 @@ h2 {
   box-sizing: border-box; }
 
 body {
-  min-height: 100vh; }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 .logoDalujoConstrucciones {
   width: 20vw; }
 
+.index_header_img {
+  text-decoration: none; }
+
 .bgNaranja {
   background-color: #eb4d0f; }
 
+.bg_Negro,
 .bgNegro {
   background-color: black; }
 
@@ -68,14 +79,114 @@ input[type=search] {
   -webkit-transition: width 0.15s ease-in-out;
   transition: width 0.15s ease-in-out; }
 
+.demandaEstilos {
+  background-color: #990000;
+  border-radius: 100%;
+  color: #f4f0f0;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
 input[type=search]:focus {
   width: 40%; }
 
 .errorDeCarga {
   width: 30vw; }
 
+.form-control:focus {
+  border-color: #eb4d0f !important;
+  box-shadow: 0 0 5px #eb4d0f !important; }
+
+.imgmodelos {
+  width: 100%;
+  height: auto; }
+
+.modelos_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1em; }
+
+.errorDeCarga {
+  width: 30vw; }
+
+.ubicacion_modelos {
+  position: relative; }
+
+.ubicacion_img {
+  line-height: 0;
+  overflow: hidden; }
+
+.ubicacion_img .imgmodelos {
+  filter: blur(0px);
+  transition: filter 0.3s ease-in;
+  transform: scale(1.1); }
+
+.ubicacion_titulos {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  background: rgba(92, 0, 11, 0.4);
+  color: #d3e9d7;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.ubicacion_modelos:hover .ubicacion_titulos {
+  opacity: 1; }
+
+.ubicacion_modelos:hover .ubicacion_img .imgmodelos {
+  filter: blur(2px); }
+
+@media (hover: none) {
+  .ubicacion_titulos {
+    opacity: 1; }
+  .ubicacion_img .imgmodelos {
+    filter: blur(2px); } }
+
+input[type="number"] {
+  text-align: end;
+  font-size: 1em;
+  border: none;
+  background-color: #f4f0f0;
+  color: #eb4d0f;
+  padding-right: 0.2em; }
+
+.cantidad {
+  background-color: #eb4d0f;
+  border-radius: 45px;
+  box-shadow: 0em 0.5em 0.7em #eb4d0f;
+  font-size: 0.8em;
+  width: 8em; }
+
+.imagenCarrito {
+  max-width: 50%; }
+
+#disminuir,
+#aumentar {
+  color: #eb4d0f;
+  background-color: #f4f0f0;
+  border: none;
+  font-size: 1.4em;
+  cursor: pointer;
+  padding: 0.2em 0.1em 0.2em 0.3em; }
+
+#disminuir {
+  border-radius: 45px 0 0 45px; }
+
+#aumentar {
+  border-radius: 0 45px 45px 0; }
+
 .bg_Negro {
-  background-color: black;
   color: #d3e9d7; }
 
 .footer_Img_Logo {
