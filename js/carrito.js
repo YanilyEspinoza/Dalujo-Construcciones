@@ -81,15 +81,20 @@ const compraFinalizada = () => {
         confirmButtonText: 'Comprar'
       }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire(
-            'Listo!',
-            'Compra Realizada',
-            'success'
-          )
+            vaciarElCarrito()
+          Swal.fire({
+            text: "Listo! compra realizada",
+            confirmButtonText: 'Ok',
+          }).then((result) => {
+            if (result.isConfirmed) {
+                redireccionarIndex()}})
         }
       })
 }
 btnComprar.addEventListener("click", compraFinalizada)
+
+//DIRECCIONAR AL INDEX DESDE OTRA PAGINA
+const redireccionarIndex=()=>location.href="../index.html" 
 
 //BOTON ELIMINAR POR PRODUCTO
 const BotonEliminar=()=> {
