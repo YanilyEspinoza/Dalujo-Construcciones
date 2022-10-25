@@ -40,8 +40,10 @@ const recuperoCarrito = () => {
         });
     const cargaGeneralCarrito = () => {
     let totalCompra = `<p><b>$ ${totalFinal}</b></p>`
+    let vaciarCarrito = `<button class="btn btn-danger">Vaciar Carrito</button>`
     let finalizarCompra = `<button class="btn btn-danger">Continuar Compra</button>`
         datosTotales.innerHTML += totalCompra
+        btnVaciar.innerHTML += vaciarCarrito
         btnComprar.innerHTML += finalizarCompra
     }
     cargaGeneralCarrito()
@@ -54,6 +56,17 @@ const recuperoCarrito = () => {
     }   
 }
 recuperoCarrito()
+
+//VACIAR EL CARRITO
+const vaciarElCarrito =()=>{
+    localStorage.removeItem('carritos')
+    listaDeCarrito.innerHTML = ""
+    datosTotales.innerHTML = ""
+    btnVaciar.innerHTML = ""
+    btnComprar.innerHTML = ""
+    recuperoCarrito()
+}
+btnVaciar.addEventListener("click", vaciarElCarrito)
 
 //EVENTO COMPRA FINALIZADA
 const compraFinalizada = () => {

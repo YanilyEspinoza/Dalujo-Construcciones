@@ -17,6 +17,7 @@
     const listaDeCarrito = document.querySelector("#areaCarrito")
     const datosTotales = document.querySelector("#total")
     const btnComprar = document.querySelector("#btn_comprar")
+    const btnVaciar = document.querySelector("#btn_vaciar")
     
         //DOC HTML MODELOS
     const modelosGrandes = document.querySelector("#modelos_section_grandes")
