@@ -100,7 +100,12 @@ const redireccionarIndex=()=>location.href="../index.html"
 const BotonEliminar=()=> {
     carritos.forEach(prod => {
         const btnEliminar = document.querySelector(`#eliminar${prod.id}`)
-        btnEliminar.addEventListener("click", () => eliminarProducto(`${prod.id}`))
+        btnEliminar.addEventListener("click", () => {eliminarProducto(`${prod.id}`)
+        navNumCarrito.innerHTML = "";
+        recuperarCarrito()
+        totalDeCarrito = carritos.reduce((acumulador, actual) => acumulador + actual.cantidad, 0);
+        cargarNumero(totalDeCarrito)
+    })
     })
 }
 BotonEliminar()

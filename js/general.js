@@ -39,9 +39,9 @@ inputNewsletter.addEventListener('keypress', (e) => {
   });
 
 //RECUPERAR EL CARRITO
-//const recuperarCarrito = () => localStorage.getItem("carritos") ? (carritos.length >= 0 ? carritos = JSON.parse(localStorage.getItem("carritos")) :  console.log("El carrito es menor a 0")) : console.log("No se encontró nada en el carrito")
+const recuperarCarrito = () => localStorage.getItem("carritos") ? carritos = JSON.parse(localStorage.getItem("carritos")) : console.log("No se encontró nada")
 
-const recuperarCarrito = () =>{
+/* const recuperarCarrito = () =>{
   if(localStorage.getItem("carritos")){
     let chequeo=()=>{
       if(carritos.length !== 0 ){
@@ -55,7 +55,7 @@ const recuperarCarrito = () =>{
   }else{
     console.log("No se encontró nada en el carrito")
   }
-}
+} */
 recuperarCarrito()
 //NUMERO DE LOGO DE CARRITO
 let totalDeCarrito = carritos.reduce((acumulador, actual) => acumulador + actual.cantidad, 0);

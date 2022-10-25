@@ -81,10 +81,14 @@ const proAgregadoCarrito = ()=> {
 const eventoBtnAgregar = () => {
     Productos.forEach(Producto => {
         const btn = document.querySelector(`#btn${Producto.id}`)
-        btn.addEventListener("click", ()=> proAgregadoCarrito())
-        btn.addEventListener("click", ()=> agregarAlCarrito(Producto.id))
-        //btn.addEventListener("click", ()=> cargarNumero(totalDeCarrito))
-        //btn.addEventListener("click", ()=> recuperarCarrito())
+        btn.addEventListener("click", ()=> {
+            proAgregadoCarrito()
+            agregarAlCarrito(Producto.id)
+            navNumCarrito.innerHTML = "";
+            recuperarCarrito()
+            totalDeCarrito = carritos.reduce((acumulador, actual) => acumulador + actual.cantidad, 0);
+            cargarNumero(totalDeCarrito)
+        })
     })
 }
 eventoBtnAgregar()
@@ -104,26 +108,14 @@ const recuperarCarrito2 = () => {
         carritos.forEach(Producto => {
             console.log(Producto.id)
             document.querySelector(`#demanda${Producto.id}`).innerText = Producto.cantidad
-
-            
-
-
-
-
         })
 const array1 = Producto.cantidad
-
-            
             const initialValue = 0;
             const sumWithInitial = array1.reduce(
               (a, b) => a + b,
               initialValue
-            );
-            
+            );         
             console.log(sumWithInitial);
-
-
-
     }else{console.log("No se encontró nada")} 
 }
 document.addEventListener("DOMContentLoaded", recuperarCarrito2())
@@ -144,7 +136,9 @@ const eliminarProd = (id) => {
     //fila.remove()
     //calcularTotal()
 }
-
+const remover =()=>{
+    console.log("remover no disponible")
+}
 // ORDENAR PRODUCTOS ALFABETICAMENTE
 const ordenarA_Z = () => {
     let fila = ""
