@@ -64,6 +64,7 @@ const vaciarElCarrito =()=>{
     datosTotales.innerHTML = ""
     btnVaciar.innerHTML = ""
     btnComprar.innerHTML = ""
+    navNumCarrito.innerHTML = ""
     recuperoCarrito()
 }
 btnVaciar.addEventListener("click", vaciarElCarrito)
@@ -90,7 +91,8 @@ const compraFinalizada = () => {
 }
 btnComprar.addEventListener("click", compraFinalizada)
 
-function BotonEliminar() {
+//BOTON ELIMINAR POR PRODUCTO
+const BotonEliminar=()=> {
     carritos.forEach(prod => {
         const btnEliminar = document.querySelector(`#eliminar${prod.id}`)
         btnEliminar.addEventListener("click", () => eliminarProducto(`${prod.id}`))
@@ -98,7 +100,7 @@ function BotonEliminar() {
 }
 BotonEliminar()
 
-function eliminarProducto(id) { 
+const eliminarProducto=(id)=> { 
     let indice = carritos.find ( prod => prod.id == id)
     let aEliminar = carritos.indexOf(indice,0)
     carritos.splice(aEliminar,1)
