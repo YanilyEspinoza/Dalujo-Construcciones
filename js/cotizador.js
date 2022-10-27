@@ -15,11 +15,7 @@ const cargarProductos = (param1) => {
                             <li class="list-group-item">Precio: ${Producto.precio} + IVA = <b>${Producto.precioFinal}</b></li>
                         </ul>
                         <div class="card-body">
-                            <button id="btn${Producto.id}" type="button" class="btn-neon">
-                            <span class="span1"></span>
-                            <span class="span2"></span>
-                            <span class="span3"></span>
-                            <span class="span4"></span>
+                            <button id="btn${Producto.id}" type="button" class="btn btn-warning">
                             Agregar</button>
                             <div id="demanda${Producto.id}" class="demandaEstilos position-absolute top-0 start-100 translate-middle badge"></div>
                             <div id="eliminarProd${Producto.id}"></div>
@@ -49,14 +45,13 @@ inputFiltrar.addEventListener("input", filtrarproductos)
 const agregarProducto =() =>{
     let id = NUEVOID()
     let nombre = prompt("Ingresa el nombre del producto:").toUpperCase()
-    let medida = prompt("Ingresa la medida del producto:").toUpperCase()
-    let color = prompt("Ingresa el color del producto:").toUpperCase()  
+    let medida = prompt("Ingresa la medida del producto:").toUpperCase() 
     let precio = prompt("Ingresa el precio del producto:")
     let precioFinal = Number((precio * IVA).toFixed(2))
     let descripcion = prompt("Ingresa la descripción del producto:").toUpperCase()
     let imagenGlobo = prompt("Ingresa el nombre del archivo del producto:").toUpperCase()
     let cantidad = 0
-    Productos.push(new Producto (id, nombre, medida, color, precio, precioFinal, descripcion, imagenGlobo, cantidad))
+    Productos.push(new Producto (id, nombre, medida, precio, precioFinal, descripcion, imagenGlobo, cantidad))
     ListaDeProductos.innerHTML=""
     cargarProductos(Productos)
     eventoBtnAgregar()
@@ -95,30 +90,13 @@ eventoBtnAgregar()
 
 // AGREGAR PRODUCTOS AL ARRAY CARRITO
 const agregarAlCarrito =(id)=> {
+    debugger
     const Producto = Productos.find(Producto => Producto.id == id)
     Producto.cantidad ++
     carritos.push(Producto)
     localStorage.setItem("carritos", JSON.stringify(carritos))
     document.querySelector(`#demanda${id}`).innerText = Producto.cantidad
 }
-
-//RECUPERAR ARRAY CARRITOS
-const recuperarCarrito2 = () => {
-    if (localStorage.getItem("carritos")){
-        carritos.forEach(Producto => {
-            console.log(Producto.id)
-            document.querySelector(`#demanda${Producto.id}`).innerText = Producto.cantidad
-        })
-const array1 = Producto.cantidad
-            const initialValue = 0;
-            const sumWithInitial = array1.reduce(
-              (a, b) => a + b,
-              initialValue
-            );         
-            console.log(sumWithInitial);
-    }else{console.log("No se encontró nada")} 
-}
-document.addEventListener("DOMContentLoaded", recuperarCarrito2())
 
 //ELIMINAR PRODUCTOS AL ARRAY CARRITO
 const botonEliminar = () => {
@@ -133,8 +111,6 @@ const eliminarProd = (id) => {
     carritos.splice(aEliminar,1)
     localStorage.setItem("carritos", JSON.stringify(carritos));
     let fila = document.getElementById(`row${id}`)
-    //fila.remove()
-    //calcularTotal()
 }
 const remover =()=>{
     console.log("remover no disponible")

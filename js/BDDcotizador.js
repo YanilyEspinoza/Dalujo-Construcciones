@@ -3,9 +3,9 @@ class Producto {
     constructor(id, nombre, medida, precio, precioFinal, descripcion, imagenVivienda, cantidad) {
         this.id = id
         this.nombre = nombre
-        this.medida = medida + "mts2"
-        this.precio = "$ " + precio
-        this.precioFinal = "$ " + precioFinal
+        this.medida = medida
+        this.precio = precio
+        this.precioFinal = precioFinal
         this.descripcion = descripcion
         this.imagenVivienda = imagenVivienda
         this.cantidad = cantidad
